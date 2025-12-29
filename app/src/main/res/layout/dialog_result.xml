@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog_cloud"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <!-- Title: Great! -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="太棒啦! 🎉"
+        android:textColor="#4CAF50"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Outcome Text -->
+    <TextView
+        android:id="@+id/tvDialogMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你抽到了： 一等奖"
+        android:textColor="#333333"
+        android:textSize="20sp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"/>
+
+    <!-- Button: Again -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRestart"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:text="再来一次 🔄"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/bg_button_green_pill"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

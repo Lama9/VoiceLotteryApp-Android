@@ -1,0 +1,70 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.example.voicelotteryapp'
+    compileSdk 36
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    defaultConfig {
+        applicationId "com.example.voicelotteryapp"
+        minSdk 24
+        targetSdk 36
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Auto-generated build time
+        buildConfigField "String", "BUILD_TIME", "\"" + new Date().format("yyyy-MM-dd HH:mm:ss") + "\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    implementation 'org.nanohttpd:nanohttpd:2.3.1'
+    implementation 'com.alphacephei:vosk-android:0.3.47'
+}
+
+// Custom task to update build time in resources on every build
+task updateBuildTimestamp {
+    // Resolve file path during configuration phase to support Configuration Cache
+    def outDir = file("src/main/res/values")
+    def outFile = new File(outDir, "build_generated.xml")
+    
+    // Force task to run every time
+    outputs.upToDateWhen { false }
+    
+    doLast {
+        def date = new Date().format("yyyy-MM-dd HH:mm:ss")
+        if (!outDir.exists()) outDir.mkdirs()
+        outFile.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n    <string name=\"build_time_dynamic\">Build: ${date}</string>\n</resources>")
+        println "Updated build time to: ${date}"
+    }
+}
+preBuild.dependsOn updateBuildTimestamp

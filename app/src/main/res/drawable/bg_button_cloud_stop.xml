@@ -1,0 +1,32 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="200dp"
+    android:height="80dp"
+    android:viewportWidth="200"
+    android:viewportHeight="80">
+
+    <!-- Shadow -->
+    <path
+        android:pathData="M40,75 C20,75 10,60 10,50 C10,35 25,30 30,30 C35,15 60,5 80,15 C95,5 125,5 140,20 C155,10 180,20 185,45 C195,50 195,70 180,75 Z"
+        android:fillColor="#F57C00"
+        android:strokeWidth="4"
+        android:strokeColor="#FF9800"
+        android:translateY="3"/>
+
+    <!-- Main Cloud Body (Orange/Yellow Gradient) -->
+    <path
+        android:pathData="M40,75 C20,75 10,60 10,50 C10,35 25,30 30,30 C35,15 60,5 80,15 C95,5 125,5 140,20 C155,10 180,20 185,45 C195,50 195,70 180,75 Z"
+        android:strokeWidth="3"
+        android:strokeColor="#FFFFFF">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startY="0"
+                android:endY="80"
+                android:type="linear">
+                <item android:offset="0" android:color="#FFB74D"/> 
+                <item android:offset="1" android:color="#FB8C00"/> 
+            </gradient>
+        </aapt:attr>
+    </path>
+    
+</vector>

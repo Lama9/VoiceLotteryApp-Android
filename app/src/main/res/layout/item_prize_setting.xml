@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="center_vertical"
+    android:background="#FAFAFA"
+    android:layout_marginBottom="4dp">
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="奖项名称"
+        android:inputType="text" />
+        
+    <View
+        android:id="@+id/vColor"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/bg_dialog_rounded" /> 
+
+    <EditText
+        android:id="@+id/etProb"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:hint="概率%"
+        android:inputType="numberDecimal"
+        android:gravity="center"
+        android:layout_marginEnd="4dp"/>
+        
+    <EditText
+        android:id="@+id/etCount"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:hint="数量"
+        android:inputType="numberSigned"
+        android:gravity="center" />
+
+    <!-- Read-only stock status -->
+    <TextView
+        android:id="@+id/tvStockStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="余: --"
+        android:textSize="12sp"
+        android:textColor="#757575"
+        android:layout_marginStart="4dp"/>
+
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_delete"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:tint="#D32F2F" />
+
+</LinearLayout>

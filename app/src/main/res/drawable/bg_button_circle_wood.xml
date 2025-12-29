@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow/Rim -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#8B4513"/> <!-- SaddleBrown -->
+        </shape>
+    </item>
+    
+    <!-- Main Body -->
+    <item android:bottom="4dp" android:top="2dp" android:left="2dp" android:right="2dp">
+        <shape android:shape="oval">
+            <solid android:color="#F4A460"/> <!-- SandyBrown -->
+            <stroke android:width="2dp" android:color="#D2691E"/> <!-- Chocolate Frame -->
+        </shape>
+    </item>
+    
+    <!-- Highlight (Top Shine) -->
+    <item android:bottom="20dp" android:top="5dp" android:left="10dp" android:right="10dp">
+        <shape android:shape="oval">
+            <gradient 
+                android:startColor="#88FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:angle="270"
+                android:type="linear"/>
+        </shape>
+    </item>
+</layer-list>
